@@ -4,10 +4,10 @@
 
 int main()
 {
-    Date* d1 = new Date(11,12,2023);
-    Time* t1 = new Time(19,10,25);
-    Date* d2 = new Date;
-    Time* t2 = new Time;
+    Date* d1 = new Date(11,12,2023); // создаем объект даты с перегруженным конструктором по-умолчанию
+    Time* t1 = new Time(19,10,25); // создаем объект времени с перегруженным конструктором по-умолчанию
+    Date* d2 = new Date; // создаем объект даты с конструктором по-умолчанию
+    Time* t2 = new Time; // создаем объект времени с конструктором по-умолчанию
     d1->Print();
     t1->Print();
     d2->Set(15, 11, 2014);
@@ -24,4 +24,5 @@ int main()
     std::cout << Less(*t1, *t2) << std::endl;
     std::cout << Equal(*t1, *t2) << std::endl;
     std::cout << Grater(*t1, *t2) << std::endl;
+    delete d1, d2, t1, t2; //очищаем память
 }

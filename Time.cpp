@@ -4,6 +4,7 @@ using std::cout;
 using std::endl;
 using std::cin;
 
+//задать часы, минуты, секунды
 void Time::Set(int hour, int minute, int second)
 {
     if (second >= 0 && second <= 59)
@@ -17,12 +18,14 @@ void Time::Set(int hour, int minute, int second)
     else cout << "Hours are in wrong range (0 to 23)" << endl;
 }
 
+//вывести данные в консоль
 void Time::Print()
 {
     setlocale(LC_ALL, "Russian");
     cout << "Время: " << this->_hour << ':' << this->_minute << ':' << this->_second << endl;
 }
 
+//считать данные с клавиатуры и записать их
 void Time::Read()
 {
     int second, minute, hour;
@@ -35,12 +38,14 @@ void Time::Read()
     Set(hour, minute, second);
 }
 
+//проверка на равность времени
 bool Equal(const Time& t1, const Time& t2)
 {
     if ((t1._second == t2._second) && (t1._minute == t2._minute) && (t1._hour == t2._hour)) return 1;
     else return 0;
 }
 
+//проверка время1 меньше время2
 bool Less(const Time& t1, const Time& t2)
 {
     if (t1._hour < t2._hour) return 1;
@@ -48,6 +53,8 @@ bool Less(const Time& t1, const Time& t2)
     else if ((t1._hour == t2._hour) && (t1._minute == t2._minute) && (t1._second < t2._second)) return 1;
     else return 0;
 }
+
+//проверка время1 больше время2
 bool Grater(const Time& t1, const Time& t2)
 {
     if (t1._hour > t2._hour) return 1;

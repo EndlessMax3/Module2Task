@@ -1,10 +1,11 @@
 #pragma once
-
+//предварительное объявление класса и методов сравнения
 class Time;
 bool Equal(const Time& t1, const Time& t2);
 bool Less(const Time& t1, const Time& t2);
 bool Grater(const Time& t1, const Time& t2);
 
+//класс времени
 class Time {
 
 private:
@@ -16,7 +17,7 @@ public:
 	void Set(int hour, int minute, int second);
 	void Print();
 	void Read();
-	Time(int hour = 1, int minute = 1, int second = 1)
+	Time(int hour = 1, int minute = 1, int second = 1) //конструктор по-умолчанию
 		: _second(second), _minute(minute), _hour(hour)
 	{}
 

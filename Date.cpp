@@ -4,7 +4,8 @@ using std::cout;
 using std::endl;
 using std::cin;
 
-void Date::Set(int day, int month, int year)
+//задать день, месяц и год
+void Date::Set(int day, int month, int year) 
 {
     if (day >= 1 && day <= 31)
         this->_day = day;
@@ -17,12 +18,14 @@ void Date::Set(int day, int month, int year)
     else cout << "Year are in wrong range (1900 to 2100)" << endl;
 }
 
+//вывести данные в консоль
 void Date::Print()
 {
     setlocale(LC_ALL, "Russian");
     cout << "Дата: " << this->_day << '.' << this->_month << '.' << this->_year << endl;
 }
 
+//считать данные с клавиатуры и записать их
 void Date::Read()
 {
     int day, month, year;
@@ -35,12 +38,14 @@ void Date::Read()
     Set(day, month, year);
 }
 
+//проверка на равность дат
 bool Equal(const Date& d1, const Date& d2)
 {
     if ((d1._day == d2._day) && (d1._month == d2._month) && (d1._year == d2._year)) return 1;
     else return 0;
 }
 
+//проверка дата1 меньше дата2
 bool Less(const Date& d1, const Date& d2)
 {
     if (d1._year < d2._year) return 1;
@@ -48,6 +53,7 @@ bool Less(const Date& d1, const Date& d2)
     else if ((d1._year == d2._year) && (d1._month == d2._month) && (d1._day < d2._day)) return 1;
     else return 0;
 }
+//проверка дата1 больше дата2
 bool Grater(const Date& d1, const Date& d2)
 {
     if (d1._year > d2._year) return 1;

@@ -1,10 +1,11 @@
 #pragma once
-
+//предварительное объ€вление класса и методов сравнени€
 class Date;
-bool Equal(const Date& d1, const Date& d2);
+bool Equal(const Date& d1, const Date& d2); 
 bool Less(const Date& d1, const Date& d2);
 bool Grater(const Date& d1, const Date& d2);
 
+//класс ƒаты
 class Date {
 	
 private:
@@ -16,7 +17,7 @@ public:
 	void Set(int day, int month, int year);
 	void Print();
 	void Read();
-	Date(int day = 1, int month = 1, int year = 2000)
+	Date(int day = 1, int month = 1, int year = 2000) //конструктор по-умолчанию
 		: _day(day), _month(month), _year(year)
 	{}
 
