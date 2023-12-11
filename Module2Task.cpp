@@ -18,11 +18,7 @@ int main()
     d2->Print();
     t1->Print();
     t2->Print();
-    std::cout << Less(*d1, *d2) << std::endl;
-    std::cout << Equal(*d1, *d2) << std::endl;
-    std::cout << Grater(*d1, *d2) << std::endl;
-    std::cout << Less(*t1, *t2) << std::endl;
-    std::cout << Equal(*t1, *t2) << std::endl;
-    std::cout << Grater(*t1, *t2) << std::endl;
+    std::cout << Compare(*t1, *t2) << std::endl;
+    std::cout << Compare(*d1, *d2) << std::endl;
     delete d1, d2, t1, t2; //очищаем память
 }

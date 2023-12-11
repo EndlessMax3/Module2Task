@@ -4,6 +4,7 @@ class Date;
 bool Equal(const Date& d1, const Date& d2); 
 bool Less(const Date& d1, const Date& d2);
 bool Grater(const Date& d1, const Date& d2);
+int Compare(const Date& d1, const Date& d2);
 
 //класс Даты
 class Date {
@@ -59,4 +60,12 @@ public:
 	}
 
 	friend bool Grater(const Date& d1, const Date& d2);
+
+	int Compare() const
+	{
+		Date d(1, 1, 2000);
+		return ::Compare(*this, d);
+	}
+
+	friend int Compare(const Date& d1, const Date& d2);
 };

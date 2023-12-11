@@ -62,3 +62,10 @@ bool Grater(const Time& t1, const Time& t2)
     else if ((t1._hour == t2._hour) && (t1._minute == t2._minute) && (t1._second > t2._second)) return 1;
     else return 0;
 }
+// метод сравнения времени
+int Compare(const Time& t1, const Time& t2)
+{
+    if (Less(t1, t2) == 1) return 0;
+    if (Grater(t1, t2) == 1) return 1;
+    if (Equal(t1, t2) == 1) return 2;
+}

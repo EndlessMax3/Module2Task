@@ -4,6 +4,7 @@ class Time;
 bool Equal(const Time& t1, const Time& t2);
 bool Less(const Time& t1, const Time& t2);
 bool Grater(const Time& t1, const Time& t2);
+int Compare(const Time& t1, const Time& t2);
 
 //класс времени
 class Time {
@@ -59,5 +60,18 @@ public:
 	}
 
 	friend bool Grater(const Time& t1, const Time& d2);
+
+	int Compare(const Time& t1) const
+	{
+		return ::Compare(*this, t1);
+	}
+
+	int Compare() const
+	{
+		Time t(1, 1, 2000);
+		return ::Compare(*this, t);
+	}
+
+	friend int Compare(const Time& t1, const Time& d2);
 };
 

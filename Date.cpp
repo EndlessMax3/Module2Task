@@ -61,3 +61,10 @@ bool Grater(const Date& d1, const Date& d2)
     else if ((d1._year == d2._year) && (d1._month == d2._month) && (d1._day > d2._day)) return 1;
     else return 0;
 }
+//метод сравнения дат
+int Compare(const Date& d1, const Date& d2)
+{
+    if (Less(d1, d2) == 1) return 0;
+    if (Grater(d1, d2) == 1) return 1;
+    if (Equal(d1, d2) == 1) return 2;
+}
