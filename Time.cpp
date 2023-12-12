@@ -34,16 +34,6 @@ void Time::Read()
     Set(hour, minute, second);
 }
 
-//перегруженный оператор=
-Time& Time::operator =(const Time& t)
-{
-    _hour = t._hour;
-    _minute = t._minute;
-    _second = t._second;
-    cout << "operator =(const Time&)" << endl;
-    return *this;
-}
-
 //проверка на равность времени
 bool Equal(const Time& t1, const Time& t2)
 {

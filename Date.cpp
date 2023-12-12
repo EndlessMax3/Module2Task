@@ -34,16 +34,6 @@ void Date::Read()
     Set(day, month, year);
 }
 
-//перегруженный оператор=
-Date& Date::operator =(const Date& d)
-{
-    _day = d._day;
-    _month = d._month;
-    _year = d._year;
-    cout << "operator =(const Date&)" << endl;
-    return *this;
-}
-
 //проверка на равность дат 
 bool Equal(const Date& d1, const Date& d2)
 {

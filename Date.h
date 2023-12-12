@@ -24,38 +24,10 @@ public:
 	void Read();
 
 	//конструктор по-умолчанию
-	Date() : Date(1, 1, 2000)
-	{
-		cout << "constructor Date()" << endl;
-	}
-
+	Date(){}
 	Date(int day, int month, int year)
 		: _day(day), _month(month), _year(year)
-	{
-		cout << "constructor Date(int,int,int)" << endl;
-	}
-
-	//copy constructor
-	Date(const Date& d) : Date(d._day, d._month, d._year)
-	{
-		cout << "construcor Date(const Date&)" << endl;
-	}
-
-	//conversion constructor
-	explicit Date(int k) : Date(k, k, k+2000)
-	{
-		cout << "constructor Date(int)" << endl;
-	}
-
-	//destructor
-	~Date()
-	{
-		cout << "~Date()" << endl;
-	}
-
-	//operator =
-	Date& operator =(const Date& d);
-
+	{}
 	bool Equal(const Date& d1) const
 	{
 		return ::Equal(*this, d1);

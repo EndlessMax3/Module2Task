@@ -22,39 +22,11 @@ public:
 	void Set(int hour, int minute, int second);
 	void Print();
 	void Read();
-
 	//конструктор по-умолчанию
-	Time() : Time(0, 0, 0)
-	{
-		cout << "constructor Time()" << endl;
-	}
-
+	Time() {}
 	Time(int hour, int minute, int second)
 		: _hour(hour), _minute(minute), _second(second)
-	{
-		cout << "constructor Time(int,int,int)" << endl;
-	}
-
-	//copy constructor
-	Time(const Time& t) : Time(t._hour, t._minute, t._second)
-	{
-		cout << "construcor Time(const Time&)" << endl;
-	}
-
-	//conversion constructor
-	explicit Time(int k) : Time(k, k, k)
-	{
-		cout << "constructor Time(int)" << endl;
-	}
-
-	//destructor
-	~Time()
-	{
-		cout << "~Time()" << endl;
-	}
-
-	//operator =
-	Time& operator =(const Time& d);
+	{}
 
 	bool Equal(const Time& t1) const
 	{
