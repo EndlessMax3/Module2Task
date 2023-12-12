@@ -44,7 +44,7 @@ Date& Date::operator =(const Date& d)
     return *this;
 }
 
-//проверка на равность дат
+//проверка на равность дат 
 bool Equal(const Date& d1, const Date& d2)
 {
     if ((d1._day == d2._day) && (d1._month == d2._month) && (d1._year == d2._year)) return 1;
