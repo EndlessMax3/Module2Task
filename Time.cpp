@@ -1,8 +1,4 @@
 #include "Time.h"
-#include <iostream>
-using std::cout;
-using std::endl;
-using std::cin;
 
 //задать часы, минуты, секунды
 void Time::Set(int hour, int minute, int second)
@@ -36,6 +32,16 @@ void Time::Read()
     cout << "Введите секунды: ";
     cin >> second;
     Set(hour, minute, second);
+}
+
+//перегруженный оператор=
+Time& Time::operator =(const Time& t)
+{
+    _hour = t._hour;
+    _minute = t._minute;
+    _second = t._second;
+    cout << "operator =(const Time&)" << endl;
+    return *this;
 }
 
 //проверка на равность времени

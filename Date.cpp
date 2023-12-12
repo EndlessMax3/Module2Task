@@ -1,8 +1,4 @@
 #include "Date.h"
-#include <iostream>
-using std::cout;
-using std::endl;
-using std::cin;
 
 //задать день, месяц и год
 void Date::Set(int day, int month, int year) 
@@ -38,7 +34,17 @@ void Date::Read()
     Set(day, month, year);
 }
 
-//проверка на равность дат
+//перегруженный оператор=
+Date& Date::operator =(const Date& d)
+{
+    _day = d._day;
+    _month = d._month;
+    _year = d._year;
+    cout << "operator =(const Date&)" << endl;
+    return *this;
+}
+
+//проверка на равность дат 
 bool Equal(const Date& d1, const Date& d2)
 {
     if ((d1._day == d2._day) && (d1._month == d2._month) && (d1._year == d2._year)) return 1;

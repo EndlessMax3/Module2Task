@@ -1,4 +1,8 @@
 #pragma once
+#include <iostream>
+using std::cout;
+using std::endl;
+using std::cin;
 //предварительное объявление класса и методов сравнения
 class Time;
 bool Equal(const Time& t1, const Time& t2);
@@ -18,9 +22,39 @@ public:
 	void Set(int hour, int minute, int second);
 	void Print();
 	void Read();
-	Time(int hour = 1, int minute = 1, int second = 1) //конструктор по-умолчанию
-		: _second(second), _minute(minute), _hour(hour)
-	{}
+
+	//конструктор по-умолчанию
+	Time() : Time(0, 0, 0)
+	{
+		cout << "constructor Time()" << endl;
+	}
+
+	Time(int hour, int minute, int second)
+		: _hour(hour), _minute(minute), _second(second)
+	{
+		cout << "constructor Time(int,int,int)" << endl;
+	}
+
+	//copy constructor
+	Time(const Time& t) : Time(t._hour, t._minute, t._second)
+	{
+		cout << "construcor Time(const Time&)" << endl;
+	}
+
+	//conversion constructor
+	explicit Time(int k) : Time(k, k, k)
+	{
+		cout << "constructor Time(int)" << endl;
+	}
+
+	//destructor
+	~Time()
+	{
+		cout << "~Time()" << endl;
+	}
+
+	//operator =
+	Time& operator =(const Time& d);
 
 	bool Equal(const Time& t1) const
 	{

@@ -1,4 +1,8 @@
 #pragma once
+#include<iostream>
+using std::cout;
+using std::endl;
+using std::cin;
 //предварительное объявление класса и методов сравнения
 class Date;
 bool Equal(const Date& d1, const Date& d2); 
@@ -18,9 +22,39 @@ public:
 	void Set(int day, int month, int year);
 	void Print();
 	void Read();
-	Date(int day = 1, int month = 1, int year = 2000) //конструктор по-умолчанию
+
+	//конструктор по-умолчанию
+	Date() : Date(1, 1, 2000)
+	{
+		cout << "constructor Date()" << endl;
+	}
+
+	Date(int day, int month, int year)
 		: _day(day), _month(month), _year(year)
-	{}
+	{
+		cout << "constructor Date(int,int,int)" << endl;
+	}
+
+	//copy constructor
+	Date(const Date& d) : Date(d._day, d._month, d._year)
+	{
+		cout << "construcor Date(const Date&)" << endl;
+	}
+
+	//conversion constructor
+	explicit Date(int k) : Date(k, k, k+2000)
+	{
+		cout << "constructor Date(int)" << endl;
+	}
+
+	//destructor
+	~Date()
+	{
+		cout << "~Date()" << endl;
+	}
+
+	//operator =
+	Date& operator =(const Date& d);
 
 	bool Equal(const Date& d1) const
 	{
@@ -29,7 +63,7 @@ public:
 
 	bool Equal() const
 	{
-		Date d(1, 1, 2000);
+		Date d;
 		return ::Equal(*this, d);
 	}
 
@@ -42,7 +76,7 @@ public:
 
 	bool Less() const
 	{
-		Date d(1, 1, 2000);
+		Date d;
 		return ::Less(*this, d);
 	}
 
